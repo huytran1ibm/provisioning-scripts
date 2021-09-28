@@ -9,10 +9,11 @@ echo "hi huy2" >> /var/www/index.html
 
 cat << EOF > busybox-httpd.sh
 #!/bin/sh
-busybox httpd -p 0.0.0.0:80 -h /var/www/ &
+python3 -m http.server 80 &
 EOF
 
 chmod +x busybox-httpd.sh
 mv busybox-httpd.sh /etc/init.d/
 
 update-rc.d busybox-httpd.sh defaults
+update-rc.d busybox-httpd.sh enable
