@@ -14,3 +14,5 @@ EOF
 
 chmod +x busybox-httpd.sh
 mv busybox-httpd.sh /etc/init.d/
+
+update-rc.d busybox-httpd.sh defaults
